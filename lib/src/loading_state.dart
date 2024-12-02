@@ -1,4 +1,6 @@
-class LoadingState {
+import 'package:equatable/equatable.dart';
+
+class LoadingState extends Equatable {
   const LoadingState({this.loadStack = 0});
 
   final int loadStack;
@@ -12,4 +14,7 @@ class LoadingState {
       loadStack: loadStack ?? this.loadStack,
     );
   }
+
+  @override
+  List<Object?> get props => [loadStack];
 }

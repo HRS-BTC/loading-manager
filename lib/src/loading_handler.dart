@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inherited_rxdart/inherited_rxdart.dart';
-import 'package:loading_manager/src/class_loading_state.dart';
+import 'package:loading_manager/src/loading_state.dart';
 
 import 'loading_manager.dart';
 

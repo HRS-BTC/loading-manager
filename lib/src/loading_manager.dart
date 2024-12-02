@@ -2,7 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:inherited_rxdart/inherited_rxdart.dart';
-import 'package:loading_manager/src/class_loading_state.dart';
+import 'package:loading_manager/src/exceptions.dart';
+import 'package:loading_manager/src/loading_state.dart';
 
 abstract class LoadingManager extends BaseViewModel<LoadingState> {
   @override
@@ -12,6 +13,7 @@ abstract class LoadingManager extends BaseViewModel<LoadingState> {
   }
 
   @protected
+  @visibleForTesting
   void initLoadingManager() {
     reset();
   }
@@ -21,6 +23,14 @@ abstract class LoadingManager extends BaseViewModel<LoadingState> {
     await future;
     pushAmount(amount: -1);
     return future;
+  }
+
+  @override
+  LoadingState get state {
+    if (!stateChangedSubject.hasValue) {
+      throw const LoadingManagerNotInitialized();
+    }
+    return super.state;
   }
 
   void push({int amount = 1}) {
@@ -49,6 +59,7 @@ abstract class LoadingManager extends BaseViewModel<LoadingState> {
   }
 
   @protected
+  @visibleForTesting
   void reset() {
     stateChangedSubject.add(const LoadingState());
   }

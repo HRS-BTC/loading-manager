@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_manager/src/class_loading_state.dart';
+import 'package:loading_manager/src/loading_state.dart';
 import 'package:loading_manager/src/loading_handler.dart';
 
 class DefaultLoadingHandler extends LoadingHandler {
