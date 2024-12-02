@@ -11,6 +11,7 @@ class DefaultLoadingHandler extends LoadingHandler<DefaultLoadingManager> {
     super.child,
     this.performHandleLoading,
     this.performBuildLoading,
+    super.loadingManager,
   });
 
   final void Function(BuildContext context, LoadingState state)?
