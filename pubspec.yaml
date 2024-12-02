@@ -2,6 +2,7 @@ name: loading_manager
 description: "A new Flutter project."
 version: 0.0.1
 homepage:
+publish_to: none
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -10,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  inherited_rxdart:
+    git:
+      url: https://github.com/HRS-BTC/inherited_rxdart.git
+      ref: a99ce18
 
 dev_dependencies:
   flutter_test:
