@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_manager/src/default_loading_manager.dart';
 import 'package:loading_manager/src/loading_state.dart';
@@ -15,7 +16,8 @@ class DefaultLoadingHandler extends LoadingHandler<DefaultLoadingManager> {
     return Visibility(
       visible: shouldShowLoading,
       child: Center(
-        child: Platform.isIOS || Platform.isMacOS
+        child: defaultTargetPlatform == TargetPlatform.iOS ||
+                defaultTargetPlatform == TargetPlatform.macOS
             ? const CupertinoActivityIndicator()
             : const CircularProgressIndicator(),
       ),
