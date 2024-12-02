@@ -26,11 +26,16 @@ class DefaultLoadingHandler extends LoadingHandler<DefaultLoadingManager> {
 
   @override
   Widget buildLoading(BuildContext context, LoadingState state, Widget child) {
-    return Stack(
-      children: [
-        child,
-        renderPlatformSpecificLoader(context, state),
-      ],
+    return Directionality(
+      textDirection: Directionality.maybeOf(context) ?? TextDirection.ltr,
+      child: Stack(
+        children: [
+          child,
+          Positioned.fill(
+            child: renderPlatformSpecificLoader(context, state),
+          ),
+        ],
+      ),
     );
   }
 

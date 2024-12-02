@@ -3,7 +3,7 @@ import 'package:inherited_rxdart/inherited_rxdart.dart';
 import 'package:loading_manager/loading_manager.dart';
 
 class DefaultScopedLoading extends SingleChildStatelessWidget {
-  const DefaultScopedLoading({super.key});
+  const DefaultScopedLoading({super.key, super.child});
 
   SingleChildWidget buildProvider(BuildContext context) {
     return const DefaultLoadingProvider();
