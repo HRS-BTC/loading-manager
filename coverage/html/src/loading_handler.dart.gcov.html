@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">9.1&nbsp;%</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
             <td class="headerCovTableEntry">11</td>
-            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">11</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2024-12-02 14:23:23</td>
+            <td class="headerValue">2024-12-02 14:30:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -68,7 +68,7 @@
 <span id="L6"><span class="lineNum">       6</span>              : </span>
 <span id="L7"><span class="lineNum">       7</span>              : abstract class LoadingHandler&lt;T extends LoadingManager&gt;</span>
 <span id="L8"><span class="lineNum">       8</span>              :     extends SingleChildStatelessWidget {</span>
-<span id="L9"><span class="lineNum">       9</span> <span class="tlaGNC tlaBgGNC">           5 :   const LoadingHandler({</span></span>
+<span id="L9"><span class="lineNum">       9</span> <span class="tlaGNC tlaBgGNC">           6 :   const LoadingHandler({</span></span>
 <span id="L10"><span class="lineNum">      10</span>              :     super.key,</span>
 <span id="L11"><span class="lineNum">      11</span>              :     super.child,</span>
 <span id="L12"><span class="lineNum">      12</span>              :     this.loadingManager,</span>
@@ -76,24 +76,24 @@
 <span id="L14"><span class="lineNum">      14</span>              : </span>
 <span id="L15"><span class="lineNum">      15</span>              :   final T? loadingManager;</span>
 <span id="L16"><span class="lineNum">      16</span>              : </span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaUNC tlaBgUNC">           0 :   T getLoadingManager(BuildContext context) {</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaUNC">           0 :     return loadingManager ?? context.read&lt;T&gt;();</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">           1 :   T getLoadingManager(BuildContext context) {</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">           2 :     return loadingManager ?? context.read&lt;T&gt;();</span></span>
 <span id="L19"><span class="lineNum">      19</span>              :   }</span>
 <span id="L20"><span class="lineNum">      20</span>              : </span>
 <span id="L21"><span class="lineNum">      21</span>              :   void handleLoading(BuildContext context, LoadingState state);</span>
 <span id="L22"><span class="lineNum">      22</span>              : </span>
 <span id="L23"><span class="lineNum">      23</span>              :   Widget buildLoading(BuildContext context, LoadingState state, Widget child);</span>
 <span id="L24"><span class="lineNum">      24</span>              : </span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaUNC">           0 :   @override</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">           1 :   @override</span></span>
 <span id="L26"><span class="lineNum">      26</span>              :   Widget buildWithChild(BuildContext context, Widget? child) {</span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaUNC">           0 :     assert(child != null);</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaUNC">           0 :     return RxConsumer&lt;LoadingState&gt;(</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaUNC">           0 :       listener: handleLoading,</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaUNC">           0 :       subjectGetter: (BuildContext context) {</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 :         return getLoadingManager(context).stateChangedSubject;</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           1 :     assert(child != null);</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           1 :     return RxConsumer&lt;LoadingState&gt;(</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           1 :       listener: handleLoading,</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">           1 :       subjectGetter: (BuildContext context) {</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           2 :         return getLoadingManager(context).stateChangedSubject;</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :       },</span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaUNC">           0 :       builder: (BuildContext context, LoadingState state) {</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaUNC">           0 :         return buildLoading(context, state, child!);</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :       builder: (BuildContext context, LoadingState state) {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           1 :         return buildLoading(context, state, child!);</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :       },</span>
 <span id="L36"><span class="lineNum">      36</span>              :     );</span>
 <span id="L37"><span class="lineNum">      37</span>              :   }</span>
