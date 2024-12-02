@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inherited_rxdart/inherited_rxdart.dart';
 import 'package:loading_manager/loading_manager.dart';
 
 class DefaultScopedLoading extends SingleChildStatelessWidget {

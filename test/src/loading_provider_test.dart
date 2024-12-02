@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:inherited_rxdart/inherited_rxdart.dart';
 import 'package:loading_manager/loading_manager.dart';
-import 'package:loading_manager/src/loading_provider.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'loading_provider_test.mocks.dart';
