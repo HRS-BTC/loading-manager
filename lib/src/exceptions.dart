@@ -3,6 +3,6 @@ class LoadingManagerNotInitialized implements Exception {
 
   @override
   String toString() {
-    return "Loading manager not initialized";
+    return "[LoadingManagerNotInitialized] Loading manager not initialized";
   }
 }

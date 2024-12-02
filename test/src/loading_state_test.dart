@@ -21,4 +21,21 @@ void main() {
     LoadingState loadingState = const LoadingState(loadStack: -1);
     expect(loadingState.shouldShowLoading, false);
   });
+
+  test("copyWith null loadStack", () {
+    const loadStackCount = -1;
+    LoadingState loadingState = const LoadingState(loadStack: loadStackCount);
+
+    loadingState = loadingState.copyWith();
+    expect(loadingState.loadStack, loadStackCount);
+  });
+
+  test("copyWith amount loadStack", () {
+    const initialCount = 5;
+    const expectedCount = 10;
+    LoadingState loadingState = const LoadingState(loadStack: initialCount);
+
+    loadingState = loadingState.copyWith(loadStack: 10);
+    expect(loadingState.loadStack, expectedCount);
+  });
 }
