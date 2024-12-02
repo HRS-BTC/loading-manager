@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +35,7 @@ class DefaultLoadingHandler extends LoadingHandler<DefaultLoadingManager> {
   @override
   Widget buildLoading(BuildContext context, LoadingState state, Widget child) {
     if (performBuildLoading != null) {
-      return performBuildLoading?.call(context, state, child) ??
-          const SizedBox.shrink();
+      return performBuildLoading?.call(context, state, child) ?? child;
     }
     return Directionality(
       textDirection: Directionality.maybeOf(context) ?? TextDirection.ltr,
