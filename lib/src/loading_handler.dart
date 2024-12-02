@@ -6,10 +6,16 @@ import 'loading_manager.dart';
 
 abstract class LoadingHandler<T extends LoadingManager>
     extends SingleChildStatelessWidget {
-  const LoadingHandler({super.key, super.child});
+  const LoadingHandler({
+    super.key,
+    super.child,
+    this.loadingManager,
+  });
+
+  final T? loadingManager;
 
   T getLoadingManager(BuildContext context) {
-    return context.read<T>();
+    return loadingManager ?? context.read<T>();
   }
 
   void handleLoading(BuildContext context, LoadingState state);
