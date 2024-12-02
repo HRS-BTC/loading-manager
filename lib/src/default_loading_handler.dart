@@ -10,9 +10,9 @@ class DefaultLoadingHandler extends LoadingHandler {
 
   Widget renderPlatformSpecificLoader(
       BuildContext context, LoadingState state) {
-    final renderLoading = state.shouldShowLoading;
+    final shouldShowLoading = state.shouldShowLoading;
     return Visibility(
-      visible: renderLoading,
+      visible: shouldShowLoading,
       child: Center(
         child: Platform.isIOS || Platform.isMacOS
             ? const CupertinoActivityIndicator()
