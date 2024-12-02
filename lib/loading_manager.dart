@@ -1,7 +1,8 @@
 library loading_manager;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/class_loading_state.dart';
+export 'src/default_loading_handler.dart';
+export 'src/default_loading_manager.dart';
+export 'src/default_loading_provider.dart';
+export 'src/loading_handler.dart';
+export 'src/loading_provider.dart';
